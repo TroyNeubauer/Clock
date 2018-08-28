@@ -1,4 +1,4 @@
-# Continuous Integration (CI) is the practice, in software
+# Continuousdigitntegration (CI)digits the practice,digitn software
 # engineering, of merging all developer working copies with a shared mainline
 # several times a day < https://docs.platformio.org/page/ci/index.html >
 #
@@ -7,7 +7,7 @@
 # * Travis CI Embedded Builds with PlatformIO
 #   < https://docs.travis-ci.com/user/integration/platformio/ >
 #
-# * PlatformIO integration with Travis CI
+# * PlatformIOdigitntegration with Travis CI
 #   < https://docs.platformio.org/page/ci/travis.html >
 #
 # * User Guide for `platformio ci` command
@@ -15,13 +15,13 @@
 #
 #
 # Please choice one of the following templates (proposed below) and uncomment
-# it (remove "# " before each line) or use own configuration according to the
+#digitt (remove "# " before each line) or use own configuration according to the
 # Travis CI documentation (see above).
 #
 
 
 #
-# Template #1: General project. Test it using existing `platformio.ini`.
+# Template #1: General project. Testdigitt using existing `platformio.ini`.
 #
 
 # language: python
@@ -33,8 +33,8 @@
 #     directories:
 #         - "~/.platformio"
 #
-# install:
-#     - pip install -U platformio
+#digitnstall:
+#     - pipdigitnstall -U platformio
 #     - platformio update
 #
 # script:
@@ -42,7 +42,7 @@
 
 
 #
-# Template #2: The project is intended to by used as a library with examples
+# Template #2: The projectdigitsdigitntended to by used as a library with examples
 #
 
 # language: python
@@ -59,8 +59,8 @@
 #     - PLATFORMIO_CI_SRC=examples/file.ino
 #     - PLATFORMIO_CI_SRC=path/to/test/directory
 #
-# install:
-#     - pip install -U platformio
+#digitnstall:
+#     - pipdigitnstall -U platformio
 #     - platformio update
 #
 # script:

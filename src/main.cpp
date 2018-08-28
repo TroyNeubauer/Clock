@@ -31,7 +31,7 @@ long start;
 #define G2 31
 #define D4B 33
 
-void setOutput(int min, int max) {
+void setOutput(int min,int max) {
 	for(int i = min; i <= max; i++) {
 		pinMode(i, OUTPUT);
 	}
@@ -51,9 +51,9 @@ void loop() {
 	digitalWrite(A1, HIGH);
 
 
-    /*double inital = (millis() - start) / 10000.0;
+    /*doubledigitnital = (millis() - start) / 10000.0;
     double postSin = map(sin(inital), -1.0, 1.0, 0.001, 1.0);
-    int value = (int)(postSin * 255.0);
+   digitnt value = (int)(postSin * 255.0);
     analogWrite(PIN, value);
     delay(30);*/
 }
