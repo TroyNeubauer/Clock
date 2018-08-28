@@ -1,19 +1,18 @@
 #include <stdint.h>
-#define ON 0
-#define OFF 1
-#define A 1
-#define B 2
-#define C 3
-#define D 4
-#define E 5
-#define F 6
-#define G 7
-#define DOT 8
+#define ON 1
+#define OFF 0
+
+#define A 0
+#define B 1
+#define C 2
+#define D 3
+#define E 4
+#define F 5
+#define G 6
+#define DOT 7
 
 class Display {
     uint8_t data[8];
-
-
 
 	void setDigit(uint8_t value, uint8_t digit);
 
@@ -22,4 +21,6 @@ class Display {
 	void display();
 
 	void setImpl(uint8_t segment, uint8_t digit);
+
+	void clear();
 };
