@@ -20,6 +20,16 @@
                 "kind": "build",
                 "isDefault": true
             }
+		},
+		{
+            "label": "Display",
+            "type": "shell",
+            "command": "pio device monitor",
+            "group": "build",
+			"presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
         }
     ]
 }

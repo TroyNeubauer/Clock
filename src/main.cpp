@@ -1,9 +1,6 @@
 #include <Arduino.h>
 #include "mymath.h"
-
-int PIN = 2;
-long start;
-
+#include "display.h"
 
 #define D1A 42
 #define A1 44
@@ -37,23 +34,19 @@ void setOutput(int min,int max) {
 	}
 }
 
+Display* display = nullptr;
+
 void setup() {
-	// declare pin 9 to be an output:
-	pinMode(PIN, OUTPUT);
-	start = millis();
+	Serial.begin(9600);
 	setOutput(42, 53);
 	setOutput(22, 33);
+
+	display = new Display(A1, B1, C1, D1, E1, F1, G1, DEC1, D1A, D2A, D3A, D4A);
 }
 
+long count = 0, total = 0;
+
 void loop() {
-
-	digitalWrite(D1A, HIGH);
-	digitalWrite(A1, HIGH);
-
-
-    /*doubledigitnital = (millis() - start) / 10000.0;
-    double postSin = map(sin(inital), -1.0, 1.0, 0.001, 1.0);
-   digitnt value = (int)(postSin * 255.0);
-    analogWrite(PIN, value);
-    delay(30);*/
+	display->setNumber(millis() % 10000);
+	display->display();
 }
