@@ -34,19 +34,17 @@ void setOutput(int min,int max) {
 	}
 }
 
-DisplayManager<1>* display = nullptr;
+DisplayManager* display = nullptr;
 
 void setup() {
 	Serial.begin(9600);
 	setOutput(42, 53);
 	setOutput(22, 33);
 
-	display = new DisplayManager<1>(A1, B1, C1, D1, E1, F1, G1, DEC1, D1A, D2A, D3A, D4A);
+	display = new DisplayManager(A1, B1, C1, D1, E1, F1, G1, DEC1, D1A, D2A, D3A, D4A);
 }
 
-long count = 0, total = 0;
-
 void loop() {
-	display->setValue(millis() % 100000000);
-	display->display();
+	//display->setValue(millis() % 100000000);
+	//display->display();
 }

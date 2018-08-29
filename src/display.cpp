@@ -9,7 +9,7 @@ Display::Display(uint8_t pinA, uint8_t pinB, uint8_t pinC, uint8_t pinD, uint8_t
 		uint8_t pinDot, uint8_t pinD1, uint8_t pinD2, uint8_t pinD3, uint8_t pinD4) : 
 
 		pinA(pinA), pinB(pinB), pinC(pinC), pinD(pinD), pinE(pinE), pinF(pinF), pinG(pinG), pinDot(pinDot), 
-		pinD1(pinD1), pinD2(pinD2), pinD3(pinD3), pinD4(pinD4), data {0, 0, 0, 0, 0, 0, 0, 0}, lastNumber(-1) {}
+		pinD1(pinD1), pinD2(pinD2), pinD3(pinD3), pinD4(pinD4), data {0, 0, 0, 0, 0, 0, 0, 0}, lastNumber(UINT32_MAX) {}
 
 void Display::setDigit(uint8_t value, uint8_t digit) {
 	switch(value){
@@ -47,7 +47,7 @@ void Display::setDigit(uint8_t value, uint8_t digit) {
 }
 
 void Display::setNumber(uint32_t number) {
-	if(lastNumber == -1 || lastNumber != number) {
+	if(lastNumber == UINT32_MAX || lastNumber != number) {
 		clear();
 		if(number > 0) setDigit(number % 10, 0);
 		number /= 10;
