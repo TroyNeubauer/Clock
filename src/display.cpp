@@ -46,7 +46,7 @@ void Display::setDigit(uint8_t value, uint8_t digit) {
   	}
 }
 
-void Display::setNumber(int number) {
+void Display::setNumber(uint32_t number) {
 	if(lastNumber == -1 || lastNumber != number) {
 		clear();
 		if(number > 0) setDigit(number % 10, 0);

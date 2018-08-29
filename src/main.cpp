@@ -1,6 +1,6 @@
 #include <Arduino.h>
 #include "mymath.h"
-#include "display.h"
+#include "displaymanager.h"
 
 #define D1A 42
 #define A1 44
@@ -34,19 +34,19 @@ void setOutput(int min,int max) {
 	}
 }
 
-Display* display = nullptr;
+DisplayManager<1>* display = nullptr;
 
 void setup() {
 	Serial.begin(9600);
 	setOutput(42, 53);
 	setOutput(22, 33);
 
-	display = new Display(A1, B1, C1, D1, E1, F1, G1, DEC1, D1A, D2A, D3A, D4A);
+	display = new DisplayManager<1>(A1, B1, C1, D1, E1, F1, G1, DEC1, D1A, D2A, D3A, D4A);
 }
 
 long count = 0, total = 0;
 
 void loop() {
-	display->setNumber(millis() % 10000);
+	display->setValue(millis() % 100000000);
 	display->display();
 }
