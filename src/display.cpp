@@ -11,6 +11,8 @@ Display::Display(uint8_t pinA, uint8_t pinB, uint8_t pinC, uint8_t pinD, uint8_t
 		pinA(pinA), pinB(pinB), pinC(pinC), pinD(pinD), pinE(pinE), pinF(pinF), pinG(pinG), pinDot(pinDot), 
 		pinD1(pinD1), pinD2(pinD2), pinD3(pinD3), pinD4(pinD4), data {0, 0, 0, 0, 0, 0, 0, 0}, lastNumber(UINT32_MAX) {}
 
+Display::Display() : data {0, 0, 0, 0, 0, 0, 0, 0}, lastNumber(UINT32_MAX) {}
+
 void Display::setDigit(uint8_t value, uint8_t digit) {
 	switch(value){
 		case 0:
@@ -47,6 +49,8 @@ void Display::setDigit(uint8_t value, uint8_t digit) {
 }
 
 void Display::setNumber(uint32_t number) {
+	//Serial.print("Setting number: ");
+	//Serial.println(number);
 	if(lastNumber == UINT32_MAX || lastNumber != number) {
 		clear();
 		if(number > 0) setDigit(number % 10, 0);
@@ -56,6 +60,7 @@ void Display::setNumber(uint32_t number) {
 		if(number > 0) setDigit(number % 10, 2);
 		number /= 10;
 		if(number > 0) setDigit(number % 10, 3);
+		lastNumber = number;
 	}
 }
 
